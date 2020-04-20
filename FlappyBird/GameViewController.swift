@@ -5,6 +5,8 @@
 //  Created by Nate Murray on 6/2/14.
 //  Copyright (c) 2014 Fullstack.io. All rights reserved.
 //
+import AppCenter
+import AppCenterCrashes
 
 import UIKit
 import SpriteKit
@@ -33,6 +35,9 @@ class GameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        MSAppCenter.start("d889e43f-e886-4d0c-88fe-0b1a9c5e744d", withServices: [
+            MSCrashes.self])
 
         if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
             // Configure the view.
